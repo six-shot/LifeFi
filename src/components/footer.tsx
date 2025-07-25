@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import Logo from "./logo";
+
 import Image from "next/image";
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
               aria-label="home"
               className="flex items-center space-x-1"
             >
-              <Logo />
+              <Image src="/logo.svg" width={100} height={100} alt="logo" />
               <h4 className="text-2xl font-semibold text-[#0E121B] tracking-[-0.96px] ">
                 Stockbits
               </h4>
