@@ -3,7 +3,6 @@ import { HeroHeader } from "./navbar";
 
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { InfiniteSlider } from "./infinite-slider";
 
 export default function HeroSection() {
   return (

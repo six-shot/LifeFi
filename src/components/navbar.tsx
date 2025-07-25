@@ -1,11 +1,8 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import Logo from "./logo";
 import Image from "next/image";
 
 const menuItems = [
