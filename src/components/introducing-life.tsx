@@ -15,7 +15,7 @@ export default function IntroducingLife() {
           opacity: [0.3, 1],
         }}
         transition={{
-          duration: 6,
+          duration: 4,
           ease: "easeInOut",
           repeat: Infinity,
           repeatType: "reverse",
@@ -28,11 +28,11 @@ export default function IntroducingLife() {
             opacity: [0.2, 1],
           }}
           transition={{
-            duration: 6,
+            duration: 4,
             ease: "easeInOut",
             repeat: Infinity,
             repeatType: "reverse",
-            delay: 1.2,
+            delay: 0.5,
           }}
         >
           <motion.div
@@ -59,7 +59,7 @@ export default function IntroducingLife() {
           users for real-world data while maintaining complete privacy through
           zero-knowledge protocols.
         </p>
-        <Button asChild variant="outline"  size="sm">
+        <Button asChild variant="outline" size="sm">
           <Link href="#">
             <span>Get Life</span>
           </Link>
