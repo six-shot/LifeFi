@@ -79,7 +79,7 @@ export default function WhyLifeFi() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[48px]">
           <div className="lg:col-span-1">
             <div className="flex flex-col gap-4">
-              {features.map((feature, index) => (
+              {features.map((feature) => (
                 <div key={feature.id}>
                   <motion.button
                     onClick={() => setActiveTab(feature.id)}

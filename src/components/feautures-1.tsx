@@ -1,34 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Features() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const handleMouseEnter = (index: number) => setHoveredIndex(index);
-  const handleMouseLeave = () => setHoveredIndex(null);
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: false },
-    transition: { duration: 0.5, ease: "easeOut" as const },
-  };
-
-  const blurAnimation = {
-    initial: { scale: 0.8, opacity: 0.5 },
-    animate: {
-      scale: [0.8, 1.2, 0.8],
-      opacity: [0.5, 0.8, 0.5],
-    },
-    transition: {
-      duration: 3,
-      ease: "easeInOut" as const,
-      repeat: Infinity,
-    },
-  };
-
   const fadeInLeft = {
     initial: { opacity: 0, x: -50 },
     whileInView: { opacity: 1, x: 0 },
@@ -75,8 +50,6 @@ export default function Features() {
           {cards.map((card, index) => (
             <div
               key={index}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
               className={`relative flex md:flex-row flex-col items-center lg:gap-[5rem] md:gap-[2rem] gap-[3rem] ${
                 index % 2 === 0 ? "md:flex-row-reverse" : ""
               }`}

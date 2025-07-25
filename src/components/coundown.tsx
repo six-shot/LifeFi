@@ -14,8 +14,8 @@ export default function Countdown({
   hours = 0,
   minutes = 0,
   seconds = 0,
-  title = "Life",
-  subtitle = "starts in",
+//   title = "Life",
+//   subtitle = "starts in",
 }: CountdownProps) {
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
