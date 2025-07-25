@@ -9,12 +9,12 @@ export default function IntroducingLife() {
       <motion.div
         className="w-[536px] h-[536px] ring-1 flex justify-center items-center"
         animate={{
-          scale: [0.1, 1],
-          opacity: [0, 1],
+          scale: [0.4, 1],
+          opacity: [0.3, 1],
         }}
         transition={{
-          duration: 4,
-          ease: "easeOut",
+          duration: 6,
+          ease: "easeInOut",
           repeat: Infinity,
           repeatType: "reverse",
         }}
@@ -22,15 +22,15 @@ export default function IntroducingLife() {
         <motion.div
           className="w-[407px] h-[407px] ring-1 flex justify-center items-center"
           animate={{
-            scale: [0.05, 1],
-            opacity: [0, 1],
+            scale: [0.3, 1],
+            opacity: [0.2, 1],
           }}
           transition={{
-            duration: 4,
-            ease: "easeOut",
+            duration: 6,
+            ease: "easeInOut",
             repeat: Infinity,
             repeatType: "reverse",
-            delay: 0.8,
+            delay: 1.2,
           }}
         >
           <motion.div
