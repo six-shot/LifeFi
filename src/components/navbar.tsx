@@ -12,7 +12,7 @@ const menuItems = [
 ];
 
 export const HeroHeader = () => {
-  const [menuState, setMenuState] = React.useState(false);
+
   const pathname = usePathname();
 
   return (
