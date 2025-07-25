@@ -2,10 +2,12 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function IntroducingLife() {
   return (
-    <div className="h-[958px] intro-text flex justify-center items-center">
+    <div className="h-[958px] intro-text flex flex-col gap-10 justify-center items-center">
       <motion.div
         className="w-[536px] h-[536px] ring-1 flex justify-center items-center"
         animate={{
@@ -48,6 +50,21 @@ export default function IntroducingLife() {
           </motion.div>
         </motion.div>
       </motion.div>
+      <div className="flex flex-col items-center">
+        <h3 className="text-[56px] text-white font-[family-name:var(--font-sora)] leading-[56px] font-semibold">
+          Introducing $LIFE
+        </h3>
+        <p className="text-base mb-8 text-white/80 font-[family-name:var(--font-fig-tree)] mt-4 w-[704px] text-center">
+          LifeFi Token ($LIFE) is a revolutionary cryptocurrency that rewards
+          users for real-world data while maintaining complete privacy through
+          zero-knowledge protocols.
+        </p>
+        <Button asChild variant="outline"  size="sm">
+          <Link href="#">
+            <span>Get Life</span>
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const menuItems = [
@@ -13,10 +13,27 @@ const menuItems = [
 
 export const HeroHeader = () => {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="flex justify-center font-[family-name:var(--font-fig-tree)]">
-      <nav className="bg-transparent fixed flex items-center w-full z-50    md:h-[80px] h-[72px]  md:mx-auto">
+      <nav
+        className={`fixed flex items-center w-full z-50 md:h-[80px] h-[72px] md:mx-auto transition-all duration-300 ${
+          isScrolled
+            ? "bg-black/20 backdrop-blur-md "
+            : "bg-transparent"
+        }`}
+      >
         <div className="mx-auto max-w-[1440px] px-5 transition-all duration-300 flex justify-between w-full">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4  w-full">
             <div className="flex w-full items-center justify-between lg:w-auto">
