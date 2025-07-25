@@ -70,8 +70,8 @@ export default function WhyLifeFi() {
   const [activeTab, setActiveTab] = useState("privacy");
 
   return (
-    <div className="py-[96px] px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-[96px] px-5">
+      <div className="max-w-[1440px] mx-auto">
         <h2 className="text-white text-[56px] leading-[56px] tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)] mb-16">
           Why LifeFi?
         </h2>
@@ -158,8 +158,16 @@ export default function WhyLifeFi() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="content-card h-full px-[34px] py-[44px]"
+                      className="content-card h-full px-[34px] py-[44px]  relative overflow-hidden"
                     >
+                      {" "}
+                      <Image
+                        src="/coins.svg"
+                        width={986}
+                        height={372}
+                        alt="coin"
+                        className="absolute -bottom-[70px] h-[372px] -left-[1px]  w-full"
+                      />
                       <div className="relative z-10">
                         <div className="space-y-4">
                           {feature.content.description.map(

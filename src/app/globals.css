@@ -76,3 +76,13 @@ body {
     ),
     var(--primary-base, #335cff);
 }
+.top-3d {
+  fill: var(--blue-100, #d5e2ff);
+  box-shadow: 0 0 50.28px 0 rgba(248, 248, 248, 0.25) inset;
+  backdrop-filter: blur(314.2486267089844px);
+}
+.blue-3d {
+  fill: var(--blue-800, #1f3bad);
+  box-shadow: 0 0 50.28px 0 rgba(248, 248, 248, 0.25) inset;
+  backdrop-filter: blur(314.2486267089844px);
+}

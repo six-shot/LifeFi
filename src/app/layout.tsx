@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figtree, Sora } from "next/font/google";
+import { Figtree, Geist, Sora } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -12,14 +12,12 @@ const calSans = localFont({
   src: "../../public/fonts/CalSans-Regular.ttf",
   variable: "--font-cal-sans",
 });
-const generalSans = localFont({
-  src: "../../public/fonts/GeneralSans-Medium.ttf",
-  variable: "--font-general-sans",
+
+const geist = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
 });
-const neue = localFont({
-  src: "../../public/fonts/ppneuemontreal-medium.otf",
-  variable: "--font-neue",
-});
+
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
@@ -39,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${figTree.variable} ${calSans.variable} ${generalSans.variable} ${neue.variable} ${sora.variable} antialiased`}
+        className={`${figTree.variable} ${calSans.variable} ${geist.variable} ${sora.variable} antialiased`}
       >
         {children}
       </body>
