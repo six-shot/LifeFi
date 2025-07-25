@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+.pr {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #335cff;
+  box-shadow: 0px 1px 2px 0px rgba(14, 18, 27, 0.24), 0px 0px 0px 1px #335cff;
+}
+.out {
+  border-radius: var(--radius-10, 10px);
+  border: 1px solid var(--stroke-soft-200, #e1e4ea);
+  background: var(--bg-white-0, #fff);
+
+  /* regular-shadow/x-small */
+  box-shadow: 0px 1px 2px 0px rgba(10, 13, 20, 0.03);
+}
+.text-bg {
+  background: radial-gradient(
+    188.51% 163.59% at 50% 50%,
+    #fff 57.39%,
+    rgba(255, 255, 255, 0.4) 91.18%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: -2.88px;
+}
+.intro-text {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #0050ff;
+}
+.ring-1 {
+  border-radius: 536px;
+  border: 0.701px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5.605px 8.408px 0 #fff inset, 0 14.013px 21.02px 0 #fff inset,
+    0 -7.007px 52.549px 0 rgba(255, 255, 255, 0.1) inset;
+  backdrop-filter: blur(21.019609451293945px);
+}
