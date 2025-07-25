@@ -1,86 +1,122 @@
-import { Card, CardContent, CardHeader } from "./ui/card";
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { ReactNode } from "react";
 
 export default function Features() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const handleMouseEnter = (index: number) => setHoveredIndex(index);
+  const handleMouseLeave = () => setHoveredIndex(null);
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: false },
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  };
+
+  const blurAnimation = {
+    initial: { scale: 0.8, opacity: 0.5 },
+    animate: {
+      scale: [0.8, 1.2, 0.8],
+      opacity: [0.5, 0.8, 0.5],
+    },
+    transition: {
+      duration: 3,
+      ease: "easeInOut" as const,
+      repeat: Infinity,
+    },
+  };
+
+  const fadeInLeft = {
+    initial: { opacity: 0, x: -50 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: false },
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  };
+
+  const fadeInRight = {
+    initial: { opacity: 0, x: 50 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: false },
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  };
+
+  const cards = [
+    {
+      title: "Live Your Life — We'll Track It Securely",
+      description:
+        "No complicated setup. Just download the LifeFi app, connect your phone, smartwatch, or fitness tracker, and go about your day — walking, running, working, living. We'll handle the tracking.",
+      image: "/1.svg",
+    },
+    {
+      title: "Earn $LIFE Tokens for Staying Active",
+      description:
+        "Stay active and get rewarded. With every step, workout, or activity, you accumulate $LIFE tokens effortlessly through your connected devices. Healthy habits just became profitable.",
+      image: "/2.svg",
+    },
+    {
+      title: "Claim, Save, Spend, or Trade",
+      description:
+        "Once you earn your $LIFE tokens, you can claim daily rewards with a single tap, save them in your wallet, or let them grow. Spend within the LifeFi ecosystem, unlock premium features, or enjoy discounts from our partners.",
+      image: "/3.svg",
+    },
+  ];
+
   return (
-    <section className="py-24 font-[family-name:var(--font-fig-tree)] ">
-      <div className="@container mx-auto max-w-[1440px] md:px-40 px-5">
-        <div className="text-center">
-          <h2 className="text-balance text-4xl font-[family-name:var(--font-cal-sans)] lg:text-[64px] tracking-[-0.64px] [text-shadow:0px_12.096px_90.72px_rgba(152,152,152,0)]">
-            Proven & Reliable
-          </h2>
-        </div>
-        <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-10 *:text-center md:mt-[64px]">
-          <Card className="group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-zinc-950/10 cursor-pointer">
-            <CardHeader>
-              <CardDecorator>
-                <Image src="users.svg" width={40} height={40} alt="users" />
-              </CardDecorator>
-              <h3 className="mt-6 text-[20px] text-[#0E121B] font-semibold">
-                $150M+
-              </h3>
-            </CardHeader>
+    <div id="feature" className="py-[96px]">
+      <h2 className=" text-bg text-[56px] leading-[56px] tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)]">
+        How it works
+      </h2>
 
-            <CardContent className="mt-1.5">
-              <p className="text-[#0E121B] text-sm font-medium">
-                Total Rewards
-              </p>
-              <p className="text-sm  text-[#525866] ">
-                Rewards to be distrubted
-              </p>
-            </CardContent>
-          </Card>
+      <div className="max-w-[1440px] mx-auto mt-[6.5rem] overflow-hidden">
+        <div className="lg:px-[2.5rem] flex flex-col gap-[58px]">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+              className={`relative flex md:flex-row flex-col items-center lg:gap-[5rem] md:gap-[2rem] gap-[3rem] ${
+                index % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Text Section */}
+              <motion.div
+                {...fadeInLeft}
+                className="md:w-1/2 flex gap-2 items-start flex-col z-[3] relative text-white md:order-1"
+              >
+                <div className="w-[472px]">
+                  <div className="flex items-center gap-[10px]">
+                    <div className="w-[37px] h-[37px] rounded-[16px] border border-white/10 shadow-[0_0_0_2px_rgba(255,255,255,0.04)] flex items-center justify-center text-sm font-[family-name:var(--font-sora)]">
+                      0{index + 1}
+                    </div>
+                  </div>
+                  <h3 className="lg:text-[40px] text-[2.375rem] leading-[40px] font-[family-name:var(--font-sora)] w-full mt-6">
+                    {card.title}
+                  </h3>
+                  <p className="w-full mt-[1rem] text-[16px] leading-[23px] font-[family-name:var(--font-fig-tree)]">
+                    {card.description}
+                  </p>
+                </div>
+              </motion.div>
 
-          <Card className="group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-zinc-950/10 cursor-pointer shadow-zinc-950/5">
-            <CardHeader className="">
-              <CardDecorator>
-                <Image src="rewards.svg" width={40} height={40} alt="rewards" />
-              </CardDecorator>
-
-              <h3 className="mt-6 text-[20px] text-[#0E121B] font-semibold">
-                12600+
-              </h3>
-            </CardHeader>
-
-            <CardContent className="mt-1.5">
-              <p className="text-[#0E121B] text-sm font-medium">Users</p>
-              <p className="text-sm  text-[#525866] ">
-                People who use and trust stockbits
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="group transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-zinc-950/10 cursor-pointer shadow-zinc-950/5">
-            <CardHeader className="">
-              <CardDecorator>
-                <Image src="trade.svg" width={40} height={40} alt="trade" />
-              </CardDecorator>
-
-              <h3 className="mt-6 text-[20px] text-[#0E121B] font-semibold">
-                $100M+
-              </h3>
-            </CardHeader>
-
-            <CardContent className="mt-1.5">
-              <p className="text-[#0E121B] text-sm font-medium">
-                Trading Volume
-              </p>
-              <p className="text-sm  text-[#525866]">
-                Processed through our assets
-              </p>
-            </CardContent>
-          </Card>
+              {/* Image Section */}
+              <motion.div
+                {...fadeInRight}
+                className="w-[660px] h-[479px] p-[0.5px] relative"
+              >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  width={660}
+                  height={479}
+                />
+              </motion.div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
-
-const CardDecorator = ({ children }: { children: ReactNode }) => (
-  <div className="relative flex justify-center items-center ">
-    <div className="bg-white border border-[#E1E4EA] rounded-[10px] px-5 w-20 h-20 flex items-center justify-center shadow-[0px_2px_4px_0px_rgba(10,13,20,0.03)] transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0px_4px_8px_0px_rgba(10,13,20,0.08)]">
-      {children}
-    </div>
-  </div>
-);

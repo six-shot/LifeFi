@@ -1,4 +1,4 @@
-// import Features from "@/components/feautures-1";
+import Features from "@/components/feautures-1";
 // import Feautures2 from "@/components/feautures-2";
 // import Footer from "@/components/footer";
 // import FrequentlyAskedQuestions from "@/components/frequently-asked-questions";
@@ -7,13 +7,18 @@ import HeroSection from "@/components/hero-section";
 // import StartInvesting from "@/components/start-investing";
 // import RewardPoweredInvesting from "@/components/reward-powered-investing";
 import IntroducingLife from "@/components/introducing-life";
+import EarlyAirdrop from "@/components/ui/early-airdrop";
+import WhyLifeFi from "@/components/why-life-fi";
 export default function Home() {
   return (
     <div className="">
       <HeroSection />
-      <IntroducingLife/>
-      {/* <Features />
-      <Feautures2 />
+      <IntroducingLife />
+      <Features />
+      <EarlyAirdrop />
+      <WhyLifeFi/>
+      {/* 
+
       <HowToSave />
       <RewardPoweredInvesting />
       <div className="md:h-[184px] h-[70px]" />
@@ -21,7 +26,6 @@ export default function Home() {
       <StartInvesting />
       <div className="h-[32px]" />
       <Footer /> */}
-    
     </div>
   );
 }

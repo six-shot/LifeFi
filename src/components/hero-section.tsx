@@ -22,7 +22,7 @@ export default function HeroSection() {
         />
         <div className="max-w-[1440px] mx-auto flex flex-col md:pt-0 pt-[64px] md:justify-end md:items-start items-center w-full h-full z-20 relative md:px-0 px-5">
           <div className="">
-            <h1 className=" text-bg  font-[family-name:var(--font-sora)] md:text-left text-center">
+            <h1 className=" text-bg text-[72px] leading-[72px] tracking-[-2.88px] font-[family-name:var(--font-sora)] md:text-left text-center">
               Earn While
               <br /> You Live
             </h1>
