@@ -5,8 +5,9 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="w-full md:h-[136px]  font-[family-name:var(--font-fig-tree)] md:px-[60px] mt-[137px] px-5">
-      <div className="mx-auto max-w-[1440px] px-5 transition-all duration-300 flex md:flex-row flex-col-reverse justify-between items-center h-full">
+    <div className="w-full md:h-[136px]  font-[family-name:var(--font-fig-tree)] mt-[137px] ">
+      <div className="">
+      <div className=" transition-all duration-300 flex md:flex-row flex-col-reverse justify-between items-center h-full">
         <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4 md:mt-0 mt-6 ">
           <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
             <Link
@@ -24,8 +25,9 @@ export default function Footer() {
           <Image src="telegram.svg" width={32} height={32} alt="telegram" />
         </div>
         <h5 className="text-[#ffff] md:mt-0 mt-6">
-          © 2025 Stockbit. All rights reserved.
-        </h5>
+            © 2025 Stockbit. All rights reserved.
+          </h5>
+        </div>
       </div>
     </div>
   );
