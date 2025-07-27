@@ -86,3 +86,11 @@ body {
   box-shadow: 0 0 50.28px 0 rgba(248, 248, 248, 0.25) inset;
   backdrop-filter: blur(314.2486267089844px);
 }
+.cta-bg {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #0050ff;
+}

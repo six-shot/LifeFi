@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figtree, Geist, Sora } from "next/font/google";
+import { Figtree, Geist, Inter, Sora } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -18,6 +18,11 @@ const geist = Geist({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
@@ -29,6 +34,8 @@ export const metadata: Metadata = {
   description: "Earn While You Live",
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${figTree.variable} ${calSans.variable} ${geist.variable} ${sora.variable} antialiased`}
+        className={`${figTree.variable} ${calSans.variable} ${geist.variable} ${sora.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>
