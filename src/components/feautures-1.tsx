@@ -40,13 +40,13 @@ export default function Features() {
   ];
 
   return (
-    <div id="feature" className="py-[96px]">
+    <div id="feature" className="py-[96px] md:px-[60px]">
       <h2 className=" text-bg text-[56px] leading-[56px] tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)]">
         How it works
       </h2>
 
-      <div className="max-w-[1440px] mx-auto mt-[6.5rem] overflow-hidden">
-        <div className="lg:px-[2.5rem] flex flex-col gap-[58px]">
+      <div className="max-w-[1440px] mx-auto mt-[6.5rem] overflow-hidden md:px-0 px-5">
+        <div className="flex flex-col gap-[58px]">
           {cards.map((card, index) => (
             <div
               key={index}

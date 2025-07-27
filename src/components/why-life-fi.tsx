@@ -70,13 +70,13 @@ export default function WhyLifeFi() {
   const [activeTab, setActiveTab] = useState("privacy");
 
   return (
-    <div className="py-[96px] px-5">
+    <div className="py-[96px] md:px-0 px-5">
       <div className="max-w-[1440px] mx-auto">
         <h2 className="text-white text-[56px] leading-[56px] tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)] mb-16">
           Why LifeFi?
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[48px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[48px] md:px-[60px]">
           <div className="lg:col-span-1">
             <div className="flex flex-col gap-4">
               {features.map((feature) => (
