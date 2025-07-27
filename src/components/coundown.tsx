@@ -3,20 +3,11 @@
 import React, { useState, useEffect } from "react";
 
 interface CountdownProps {
-  hours?: number;
-  minutes?: number;
-  seconds?: number;
   title?: string;
   subtitle?: string;
 }
 
-export default function Countdown({
-  hours = 0,
-  minutes = 0,
-  seconds = 0,
-}: //   title = "Life",
-//   subtitle = "starts in",
-CountdownProps) {
+export default function Countdown({}: CountdownProps) {
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
@@ -24,28 +15,33 @@ CountdownProps) {
   });
 
   useEffect(() => {
-    // Calculate total seconds from props
-    const totalSeconds = hours * 3600 + minutes * 60 + seconds;
-    let remainingSeconds = totalSeconds;
-
-    const calculateTimeLeft = () => {
-      if (remainingSeconds > 0) {
-        const hours = Math.floor(remainingSeconds / 3600);
-        const minutes = Math.floor((remainingSeconds % 3600) / 60);
-        const seconds = remainingSeconds % 60;
-
-        setTimeLeft({ hours, minutes, seconds });
-        remainingSeconds--;
-      } else {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
+    const fetchCountdown = async () => {
+      try {
+        const response = await fetch("/api/countdown");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setTimeLeft({
+          hours: data.hours || 0,
+          minutes: data.minutes || 0,
+          seconds: data.seconds || 0,
+        });
+      } catch (error) {
+        console.error("Failed to fetch countdown:", error);
+        // Set a default countdown if API fails
+        setTimeLeft({ hours: 24, minutes: 0, seconds: 0 });
       }
     };
 
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+    // Fetch initial countdown immediately
+    fetchCountdown();
+
+    // Update every second
+    const timer = setInterval(fetchCountdown, 1000);
 
     return () => clearInterval(timer);
-  }, [hours, minutes, seconds]);
+  }, []);
 
   const formatNumber = (num: number) => num.toString().padStart(2, "0");
 
@@ -73,16 +69,22 @@ CountdownProps) {
           <div
             className="text-[112px] font-[family-name:var(--font-inter)] countdown-text relative z-[1000] flex gap-6 items-center"
             style={{
-              minWidth: "508px",
+              minWidth: "518px",
               textAlign: "center",
               whiteSpace: "nowrap",
             }}
           >
-            <div className="w-[105px] ">{formatNumber(timeLeft.hours)}</div>
-            <div className="">:</div>
-            <div className="w-[105px]">{formatNumber(timeLeft.minutes)}</div>
-            <div className="">:</div>
-            <div className="w-[105px]">{formatNumber(timeLeft.seconds)}</div>
+            <div className="w-[120px] text-center">
+              {formatNumber(timeLeft.hours)}
+            </div>
+            <div className="w-[24px] text-center">:</div>
+            <div className="w-[120px] text-center">
+              {formatNumber(timeLeft.minutes)}
+            </div>
+            <div className="w-[24px] text-center">:</div>
+            <div className="w-[120px] text-center">
+              {formatNumber(timeLeft.seconds)}
+            </div>
           </div>
         </div>
       </div>

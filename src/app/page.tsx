@@ -20,11 +20,6 @@ export default function Home() {
       <WhyLifeFi />
       <Trusted />
       <Countdown
-        hours={12}
-        minutes={30}
-        seconds={45}
-        title="Launch"
-        subtitle="begins in"
       />
       <CTA/>
     </div>
