@@ -5,9 +5,16 @@ import React, { useState, useEffect } from "react";
 interface CountdownProps {
   title?: string;
   subtitle?: string;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
 }
 
-export default function Countdown({}: CountdownProps) {
+export default function Countdown({
+  hours: propHours,
+  minutes: propMinutes,
+  seconds: propSeconds,
+}: CountdownProps) {
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
@@ -15,6 +22,20 @@ export default function Countdown({}: CountdownProps) {
   });
 
   useEffect(() => {
+    // If props are provided, use them instead of fetching from API
+    if (
+      propHours !== undefined ||
+      propMinutes !== undefined ||
+      propSeconds !== undefined
+    ) {
+      setTimeLeft({
+        hours: propHours || 0,
+        minutes: propMinutes || 0,
+        seconds: propSeconds || 0,
+      });
+      return;
+    }
+
     const fetchCountdown = async () => {
       try {
         const response = await fetch("/api/countdown");
@@ -41,7 +62,7 @@ export default function Countdown({}: CountdownProps) {
     const timer = setInterval(fetchCountdown, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [propHours, propMinutes, propSeconds]);
 
   const formatNumber = (num: number) => num.toString().padStart(2, "0");
 

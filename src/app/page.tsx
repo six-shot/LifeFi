@@ -1,8 +1,5 @@
 import Features from "@/components/feautures-1";
-// import Footer from "@/components/footer";
-
 import HeroSection from "@/components/hero-section";
-
 import IntroducingLife from "@/components/introducing-life";
 import Trusted from "@/components/testimonial";
 import EarlyAirdrop from "@/components/ui/early-airdrop";
@@ -19,8 +16,7 @@ export default function Home() {
       <EarlyAirdrop />
       <WhyLifeFi />
       <Trusted />
-      <Countdown
-      />
+      <Countdown/>
       <CTA/>
     </div>
   );
