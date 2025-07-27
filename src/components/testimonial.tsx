@@ -106,8 +106,8 @@ const TestimonialCard = ({
 
 export default function Trusted() {
   return (
-    <section className="py-24 font-[family-name:var(--font-fig-tree)]">
-      <div className="@container mx-auto max-w-[1440px] md:px-40 px-5">
+    <section className="py-24 font-[family-name:var(--font-fig-tree)] px-[60px]">
+      <div className="@container mx-auto max-w-[1440px] ">
         <h2 className="text-white text-[56px] leading-[56px] tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)] mb-16">
           Trusted by the Future
         </h2>
