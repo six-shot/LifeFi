@@ -19,8 +19,6 @@ export default function Home() {
       <EarlyAirdrop />
       <WhyLifeFi />
       <Trusted />
-
-      {/* Add your countdown here - set hours, minutes, seconds */}
       <Countdown
         hours={12}
         minutes={30}

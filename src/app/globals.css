@@ -94,3 +94,15 @@ body {
     ),
     #0050ff;
 }
+.countdown-box {
+  border-radius: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(144deg, #28272f 9.13%, #040404 62.89%);
+  box-shadow: 0 0 24px 0 rgba(255, 255, 255, 0.4);
+}
+.countdown-text {
+  background: linear-gradient(63deg, #eef1f0 7.18%, #71757e 83.56%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
