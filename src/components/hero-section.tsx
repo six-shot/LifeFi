@@ -28,7 +28,7 @@ export default function HeroSection() {
             </h1>
           </div>
           <p className=" text-white leading-6 tracking-[0.27px] font-[family-name:var(--font-fig-tree)] md:text-[18px] text-sm mt-4 text-left ">
-            Join the LifeFi revolution - <br/> monetize your real-world data.
+            Join the LifeFi revolution - <br /> monetize your real-world data.
           </p>
 
           <div className="flex w-full  md:items-start items-center md:justify-start  flex-row gap-[18px] mt-8">

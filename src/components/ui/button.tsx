@@ -12,8 +12,7 @@ const buttonVariants = cva(
           "pr text-white bg-primary hover:bg-primary/90 relative overflow-hidden before:content-[''] before:absolute before:inset-y-0 before:left-[-60%] before:w-[60%] before:bg-gradient-to-r  before:from-white/40 before:via-white/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-500 hover:before:left-[110%]",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "out text-[#0E121B] tracking-[-0.084px] hover:bg-[#F5F6FA]",
+        outline: "out text-[#0E121B] tracking-[-0.084px] hover:bg-[#F5F6FA]",
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 hover:bg-secondary/90",
         ghost:
