@@ -88,11 +88,22 @@ export const HeroHeader = () => {
                 data-state={menuState ? "active" : "inactive"}
               >
                 <div className="flex flex-col gap-[4px]">
-                  <div className="w-[30px] h-[2px] bg-white group-hover:bg-white transition-all duration-300 group-hover:rotate-45 group-hover:translate-y-[10px]" />
-                  <div className="w-[30px] h-[2px] bg-white group-hover:bg-white transition-all duration-300 group-hover:opacity-0 group-hover:scale-0" />
-                  <div className="w-[30px] h-[2px] bg-white group-hover:bg-white transition-all duration-300 group-hover:-rotate-45 group-hover:-translate-y-[1px]" />
+                  <div
+                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                      menuState ? "rotate-45 translate-y-[6px]" : ""
+                    }`}
+                  />
+                  <div
+                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                      menuState ? "opacity-0 scale-0" : ""
+                    }`}
+                  />
+                  <div
+                    className={`w-[30px] h-[2px] bg-white transition-all duration-300 ${
+                      menuState ? "-rotate-45 -translate-y-[6px]" : ""
+                    }`}
+                  />
                 </div>
-                <X className="data-[state=active]:rotate-0 data-[state=active]:scale-100 data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
               </button>
             </div>
           </div>
