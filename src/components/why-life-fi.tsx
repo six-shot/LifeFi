@@ -155,7 +155,7 @@ export default function WhyLifeFi() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="content-card h-full px-4 sm:px-6 md:px-8 lg:px-[34px] py-6 sm:py-8 md:py-10 lg:py-[44px] relative overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-none"
+                      className="content-card h-full px-4 sm:px-6 md:px-8 lg:px-[34px] py-6 sm:py-8 md:py-10 lg:py-[44px] relative overflow-hidden rounded-[40px] lg:rounded-[64px]"
                     >
                       <Image
                         src="/coins.svg"

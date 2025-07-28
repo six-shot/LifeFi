@@ -68,7 +68,7 @@ body {
   backdrop-filter: blur(12.800000190734863px);
 }
 .content-card {
-  border-radius: 64px;
+  
   background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.16) 0%,
