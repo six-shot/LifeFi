@@ -8,10 +8,10 @@ export default function HeroSection() {
   return (
     <div className=" w-full  ">
       <HeroHeader />
-      <section className=" relative md:h-[982px] md:px-[60px] md:mt-0 mt-[72px] w-full flex items-center bg-[#010106] pb-[64px]">
+      <section className=" relative md:h-[982px] h-screen md:px-[60px] pt-[64px] w-full flex items-center bg-[#010106] pb-[64px]">
         <video
           src="hero.mp4"
-          className="md:block hidden absolute right-0 top-0 h-full w-full object-cover z-10"
+          className="  absolute right-0 top-0 h-full w-full object-cover z-10"
           autoPlay
           loop
           muted
@@ -20,18 +20,18 @@ export default function HeroSection() {
           disablePictureInPicture
           preload="metadata"
         />
-        <div className="max-w-[1440px] mx-auto flex flex-col md:pt-0 pt-[64px] md:justify-end md:items-start items-center w-full h-full z-20 relative md:px-0 px-5">
+        <div className="max-w-[1440px] mx-auto flex flex-col md:pt-0 pt-[64px] md:justify-end items-start  w-full h-full z-20 relative md:px-0 px-5">
           <div className="">
-            <h1 className=" text-bg text-[72px] leading-[72px] tracking-[-2.88px] font-[family-name:var(--font-sora)] md:text-left text-center">
+            <h1 className=" text-bg md:text-[72px] text-[40px] md:leading-[72px] leading-[40px] md:tracking-[-2.88px] tracking-[-1.6px] font-[family-name:var(--font-sora)]">
               Earn While
               <br /> You Live
             </h1>
           </div>
-          <p className=" text-white leading-6 tracking-[0.27px] font-[family-name:var(--font-fig-tree)] md:text-[18px] text-[20px] mt-4 md:text-left text-center">
-            Join the LifeFi revolution - monetize your real-world data.
+          <p className=" text-white leading-6 tracking-[0.27px] font-[family-name:var(--font-fig-tree)] md:text-[18px] text-sm mt-4 text-left ">
+            Join the LifeFi revolution - <br/> monetize your real-world data.
           </p>
 
-          <div className="flex w-full  md:items-start items-center md:justify-start justify-center flex-row gap-[18px] mt-8">
+          <div className="flex w-full  md:items-start items-center md:justify-start  flex-row gap-[18px] mt-8">
             <Button asChild variant="default" size="sm">
               <Link href="#">
                 <span>Get Started</span>

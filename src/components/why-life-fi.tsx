@@ -70,42 +70,43 @@ export default function WhyLifeFi() {
   const [activeTab, setActiveTab] = useState("privacy");
 
   return (
-    <div className="py-[96px] px-[60px]">
-      <div className="md:px-0 px-5">
-        <h2 className="text-white text-[56px] leading-[56px] tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)] mb-16">
+    <div className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-[60px]">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-tight sm:leading-tight md:leading-tight lg:leading-[56px] tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)] mb-8 sm:mb-12 md:mb-16">
           Why LifeFi?
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[48px] max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 lg:gap-[48px]">
           <div className="lg:col-span-1">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
               {features.map((feature) => (
                 <div key={feature.id}>
                   <motion.button
                     onClick={() => setActiveTab(feature.id)}
-                    className={`w-full rounded-[40px] text-left transition-colors  border border-[rgba(255,255,255,0.06)] duration-200 ${
+                    className={`w-full rounded-2xl sm:rounded-3xl lg:rounded-[40px] text-left transition-colors border border-[rgba(255,255,255,0.06)] duration-200 ${
                       activeTab === feature.id
-                        ? "h-[399px]  bg-[#0E121B] p-6"
-                        : "hover:bg-[#0E121B] bg-[rgba(255,255,255,0.04)] backdrop-blur-[20px] h-[80px] px-6 cursor-pointer"
+                        ? "h-auto min-h-[200px] sm:min-h-[250px] md:min-h-[300px] lg:h-[399px] bg-[#0E121B] p-4 sm:p-5 lg:p-6"
+                        : "hover:bg-[#0E121B] bg-[rgba(255,255,255,0.04)] backdrop-blur-[20px] h-16 sm:h-20 lg:h-[80px] px-4 sm:px-5 lg:px-6 cursor-pointer"
                     }`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     {activeTab === feature.id ? (
                       <div className="flex flex-col justify-between items-start h-full">
-                        <div className="w-[60px] h-[60px] rounded-full icon-1st flex items-center justify-center">
-                          <div className="w-[40px] h-[40px] flex items-center justify-center icon-2nd rounded-full">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-[60px] lg:h-[60px] rounded-full icon-1st flex items-center justify-center">
+                          <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[40px] lg:h-[40px] flex items-center justify-center icon-2nd rounded-full">
                             <Image
                               src="/privacy.svg"
                               alt={feature.title}
                               width={26}
                               height={26}
+                              className="w-5 h-5 sm:w-6 sm:h-6 lg:w-[26px] lg:h-[26px]"
                             />
                           </div>
                         </div>
-                        <div className="">
+                        <div className="w-full">
                           <h3
-                            className={`font-semibold text-[24px] leading-[32px] font-[family-name:var(--font-sora)] tracking-[-0.96px] ${
+                            className={`font-semibold text-lg sm:text-xl md:text-2xl lg:text-[24px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-[family-name:var(--font-sora)] tracking-[-0.96px] ${
                               activeTab === feature.id
                                 ? "text-white"
                                 : "text-white/80"
@@ -117,7 +118,7 @@ export default function WhyLifeFi() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="text-base leading-[24px] font-[family-name:var(--font-fig-tree)] text-white tracking-[-0.32px] mt-4 "
+                            className="text-sm sm:text-base leading-relaxed sm:leading-[24px] font-[family-name:var(--font-fig-tree)] text-white tracking-[-0.32px] mt-3 sm:mt-4"
                           >
                             {feature.content.description[0]}
                           </motion.p>
@@ -126,7 +127,7 @@ export default function WhyLifeFi() {
                     ) : (
                       <div className="flex items-center h-full">
                         <h3
-                          className={`font-semibold text-[24px] leading-[32px] font-[family-name:var(--font-sora)] tracking-[-0.96px] ${
+                          className={`font-semibold text-lg sm:text-xl md:text-2xl lg:text-[24px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-[family-name:var(--font-sora)] tracking-[-0.96px] ${
                             activeTab === feature.id
                               ? "text-white"
                               : "text-white/80"
@@ -137,17 +138,13 @@ export default function WhyLifeFi() {
                       </div>
                     )}
                   </motion.button>
-
-                  {/* {index < features.length - 1 && (
-                    <div className="h-px bg-gray-600/50 my-2" />
-                  )} */}
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Column - Content */}
-          <div className="lg:col-span-2 ">
+          <div className="lg:col-span-2">
             <AnimatePresence mode="wait">
               {features.map(
                 (feature) =>
@@ -158,18 +155,17 @@ export default function WhyLifeFi() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="content-card h-full px-[34px] py-[44px]  relative overflow-hidden"
+                      className="content-card h-full px-4 sm:px-6 md:px-8 lg:px-[34px] py-6 sm:py-8 md:py-10 lg:py-[44px] relative overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-none"
                     >
-                      {" "}
                       <Image
                         src="/coins.svg"
                         width={986}
                         height={372}
                         alt="coin"
-                        className="absolute -bottom-[70px] h-[372px] -left-[1px]  w-full"
+                        className="absolute -bottom-[70px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[372px] -left-[1px] w-full opacity-50 lg:opacity-100"
                       />
                       <div className="relative z-10">
-                        <div className="space-y-4">
+                        <div className="space-y-3 sm:space-y-4">
                           {feature.content.description.map(
                             (paragraph, index) => (
                               <motion.p
@@ -177,7 +173,7 @@ export default function WhyLifeFi() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
-                                className="text-white leading-[46px] text-[32px] font-semibold font-[family-name:var(--font-sora)]"
+                                className="text-white leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-[46px] text-lg sm:text-xl md:text-2xl lg:text-[32px] font-semibold font-[family-name:var(--font-sora)]"
                               >
                                 {paragraph}
                               </motion.p>

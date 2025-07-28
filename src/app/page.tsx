@@ -16,8 +16,9 @@ export default function Home() {
       <EarlyAirdrop />
       <WhyLifeFi />
       <Trusted />
-      <Countdown/>
-      <CTA/>
+      <Countdown />
+      <CTA />
+   
     </div>
   );
 }
