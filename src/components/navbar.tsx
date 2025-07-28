@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-
 const menuItems = [
   { name: "Home", href: "/" },
   { name: "Whitepaper", href: "/whitepaper" },
@@ -110,14 +109,14 @@ export const HeroHeader = () => {
 
           {/* Mobile Menu */}
           <div
-            className={`fixed top-[72px] left-0 right-0 bottom-0 z-40 bg-black/80 backdrop-blur-sm transition-all duration-300 lg:hidden ${
+            className={`fixed top-[72px] left-0 right-0 bottom-0 z-[1000] bg-black/80 backdrop-blur-md transition-all duration-300 lg:hidden ${
               menuState ? "opacity-100 visible" : "opacity-0 invisible"
             }`}
             onClick={() => setMenuState(false)}
           >
             <div
-              className={`absolute top-0 left-0 right-0 bg-background border-b shadow-2xl transition-all duration-300 ${
-                menuState ? "translate-y-0" : "-translate-y-full"
+              className={`absolute top-0 left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 ${
+                menuState ? "translate-y-0" : "translate-y-full"
               }`}
               onClick={(e) => e.stopPropagation()}
             >
