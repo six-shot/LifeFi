@@ -68,7 +68,6 @@ body {
   backdrop-filter: blur(12.800000190734863px);
 }
 .content-card {
-  
   background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.16) 0%,
@@ -105,4 +104,13 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.bl {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 18, 27, 0) 4.76%,
+    #010106 33.65%,
+    rgba(14, 18, 27, 0) 62.7%
+  );
+
 }
