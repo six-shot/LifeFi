@@ -112,9 +112,12 @@ const TestimonialCard = ({
 
 export default function Trusted() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 font-[family-name:var(--font-fig-tree)] px-4 sm:px-6 md:px-8 lg:px-[60px]">
-      <div className="@container mx-auto max-w-[1440px]">
-        <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[56px] leading-[32px] sm:leading-[40px] md:leading-[48px] lg:leading-[56px] tracking-[-1px] sm:tracking-[-1.2px] md:tracking-[-1.5px] lg:tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)] mb-8 sm:mb-12 md:mb-16">
+    <section className=" py-12 sm:py-16 md:py-20 lg:py-24 font-[family-name:var(--font-fig-tree)]  relative overflow-hidden">
+      <div className="absolute md:-top-[380px] -top-[500px] z-10 w-full h-[906px] bl rotate-180" />
+      <div className="absolute md:-bottom-[500px] -bottom-[600px] z-10 w-full h-[906px] bl" />
+      <div className="px-5 sm:px-6 md:px-8 lg:px-[60px]">
+      <div className="@container mx-auto max-w-[1440px] ">
+        <h2 className="text-white text-3xl relative z-[20] sm:text-4xl md:text-5xl lg:text-[56px] leading-[32px] sm:leading-[40px] md:leading-[48px] lg:leading-[56px] tracking-[-1px] sm:tracking-[-1.2px] md:tracking-[-1.5px] lg:tracking-[-1.68px] font-[family-name:var(--font-sora)] text-center text-shadow-[0_0_0_2px_rgba(255,255,255,0.04)] mb-8 sm:mb-12 md:mb-16">
           Trusted by the Future
         </h2>
 
@@ -221,6 +224,7 @@ export default function Trusted() {
                     />
                   ))}
                 </InfiniteSlider>
+                </div>
               </div>
             </div>
           </div>
